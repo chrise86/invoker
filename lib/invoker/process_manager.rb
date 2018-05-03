@@ -98,11 +98,11 @@ module Invoker
       env = {}
 
       if File.exist?(default_env)
-        env.merge!(Dotenv::Environment.new(default_env))
+        env.merge!(Dotenv::Environment.new(default_env, true))
       end
 
       if File.exist?(local_env)
-        env.merge!(Dotenv::Environment.new(local_env))
+        env.merge!(Dotenv::Environment.new(local_env, true))
       end
 
       env
